@@ -71,8 +71,10 @@ class App extends Component {
         { route === 'home'
           ? <div>
               <Chart />
-              <PieChartX />
-              <LineChart />
+              <div className="compContainer">
+                <PieChartX />
+                <LineChart />
+              </div>
             </div>
           : (
              route === 'signin'

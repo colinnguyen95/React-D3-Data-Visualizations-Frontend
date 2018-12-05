@@ -27,7 +27,7 @@ class LineChart extends React.Component {
           .attr("stroke-width", 6)
           .attr("stroke", "#6788ad")
           .transition()
-          .duration(3000)
+          .duration(2000)
           .attr("stroke-width", 0)
           .attr("stroke-dashoffset", 0);
     
@@ -110,7 +110,7 @@ class LineChart extends React.Component {
                   id={"area"}
                   d={area(data)}
                   fill={"url(#MyGradient)"}
-                  style={{ opacity: 0.8 }}
+                  style={{ opacity: 0.9 }}
                 />
               </g>
             </svg>

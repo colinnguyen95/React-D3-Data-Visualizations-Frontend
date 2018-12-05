@@ -11,7 +11,8 @@ class Bars extends Component {
   render() {
     const colorScale = scaleLinear()
       .domain([0, this.props.maxValue])
-      .range(['#F3E5F5', '#7B1FA2'])
+      //.range(['#F3E5F5', '#7B1FA2'])
+      .range(['#7B1FA2'])
       .interpolate(interpolateLab)
     //console.log(this.props.maxValue)
     const { scales, margins, data, svgDimensions } = this.props
