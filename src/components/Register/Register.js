@@ -6,13 +6,27 @@ class Register extends React.Component {
     this.state = {
       email: '',
       password: '',
-      name: ''
+      firstName: '',
+      lastName: '',
+      employeeID: ''
     }
   }
 
-  onNameChange = (event) => {
-    this.setState({name: event.target.value})
+  onFirstNameChange = (event) => {
+    this.setState({firstName: event.target.value})
   }
+
+  onLastNameChange = (event) => {
+    this.setState({lastName: event.target.value})
+  }
+
+  onEmployeeIDChange = (event) => {
+    this.setState({employeeID: event.target.value})
+  }
+
+  // onNameChange = (event) => {
+  //   this.setState({name: event.target.value})
+  // }
 
   onEmailChange = (event) => {
     this.setState({email: event.target.value})
@@ -23,13 +37,15 @@ class Register extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/register', {
+    fetch('http://localhost:5000/register', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        name: this.state.name
+        firstname: this.state.firstName,
+        lastname: this.state.lastName,
+        employeeID: this.state.employeeID
       })
     })
       .then(response => response.json())
@@ -49,13 +65,33 @@ class Register extends React.Component {
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Register</legend>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
+                <label className="db fw6 lh-copy f6" htmlFor="name">First Name</label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="text"
-                  name="name"
-                  id="name"
-                  onChange={this.onNameChange}
+                  name="firstName"
+                  id="firstName"
+                  onChange={this.onFirstNameChange}
+                />
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="name">Last Name</label>
+                <input
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  type="text"
+                  name="lastName"
+                  id="lastname"
+                  onChange={this.onLastNameChange}
+                />
+              </div>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="name">Employee ID</label>
+                <input
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  type="text"
+                  name="employeeID"
+                  id="employeeID"
+                  onChange={this.onEmployeeIDChange}
                 />
               </div>
               <div className="mt3">
