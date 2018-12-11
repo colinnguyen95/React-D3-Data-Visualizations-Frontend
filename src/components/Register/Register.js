@@ -43,15 +43,15 @@ class Register extends React.Component {
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        firstname: this.state.firstName,
-        lastname: this.state.lastName,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
         employeeID: this.state.employeeID
       })
     })
       .then(response => response.json())
       .then(user => {
         if (user) {
-          this.props.loadUser(user)
+          // this.props.loadUser(user)
           this.props.onRouteChange('home');
         }
       })
@@ -59,13 +59,13 @@ class Register extends React.Component {
 
   render() {
     return (
-      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
+      <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center form1">
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Register</legend>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="name">First Name</label>
+                <label className="db fw6 lh-copy f6" htmlFor="firstName">First Name</label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="text"
@@ -75,7 +75,7 @@ class Register extends React.Component {
                 />
               </div>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="name">Last Name</label>
+                <label className="db fw6 lh-copy f6" htmlFor="lastName">Last Name</label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="text"
@@ -85,7 +85,7 @@ class Register extends React.Component {
                 />
               </div>
               <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="name">Employee ID</label>
+                <label className="db fw6 lh-copy f6" htmlFor="employeeID">Employee ID</label>
                 <input
                   className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                   type="text"

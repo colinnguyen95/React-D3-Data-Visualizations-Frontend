@@ -70,17 +70,25 @@ class App extends Component {
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home'
           ? <div>
-              <Chart />
+              <div className="compContainer">
+                <Chart />
+                <Chart />
+              </div>
               <div className="compContainer">
                 <PieChartX />
                 <LineChart />
               </div>
             </div>
-          : (
+          : <div>
+            <Particles className='particles'
+              params={particlesOptions}
+            />
+            {
              route === 'signin'
              ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            )
+            }
+            </div>
         }
       </div>
     );
