@@ -43,14 +43,15 @@ class LineChart extends React.Component {
       render() {
         let { data } = this.state;
     
-        const height = 300;
+        const height = 400;
         const width = 500;
     
         const boxStyles = {
+          //background: 'pink',
           width: width,
           height: height,
           borderRadius: 5,
-          margin: "0 auto"
+          //margin: "0 auto"
         };
     
         const minX = d3.min(data.map(o => o["Order Date"]));
@@ -94,8 +95,8 @@ class LineChart extends React.Component {
             <svg height={height} width={width}>
               <defs>
                 <linearGradient id="MyGradient">
-                  <stop offset="-10%" stop-color="#3b83d4" />
-                  <stop offset="95%" stop-color="#6788ad" />
+                  <stop offset="-10%" stopColor="#3b83d4" />
+                  <stop offset="95%" stopColor="#6788ad" />
                 </linearGradient>
               </defs>
     

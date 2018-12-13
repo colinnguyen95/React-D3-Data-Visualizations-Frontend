@@ -1,4 +1,15 @@
+.navHeader {
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between; 
+    background: #6D7993; 
+    width: 100%;
+}
+
 .OfficeSolutions {
+    color: white;
+    margin-left: 20px;
     font-size: 30px;
     font-weight: bold;
 }

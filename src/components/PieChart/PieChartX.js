@@ -23,8 +23,8 @@ class PieChartX extends Component {
     }
     render(){
         const { data } = this.state;
-        const height = 450;
-        const width = 450;
+        const height = 400;
+        const width = 500;
         // let width = window.innerWidth;
         // let height = window.innerHeight;
         let minViewportSize = Math.min(width, height);

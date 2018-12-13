@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
-import Chart from './components/Chart';
+import Chart from './components/BarChart/Chart';
 //import PieChart from './components/PieChart'
-import PieChartX from './components/PieChartX'
+import PieChartX from './components/PieChart/PieChartX'
 import LineChart from './components/LineChart'
+import MainRangeSelection from './components/MainRangeSelection'
+import SubContainer from './components/SubContainer'
+import Cards from './components/Cards'
+import MainContainer from './components/MainContainer'
 import Register from './components/Register/Register';
 import './App.css';
 
@@ -69,17 +73,23 @@ class App extends Component {
         /> */}
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home'
-          ? <div>
+          ? <div className="home-page" style={{background: '#343434'}}>
+              <div className="chartContainer">
+                <MainRangeSelection />
+                
+                <MainContainer />
+                <SubContainer />
+              </div>
               <div className="compContainer">
                 <Chart />
-                <Chart />
+                
               </div>
               <div className="compContainer">
                 <PieChartX />
                 <LineChart />
               </div>
             </div>
-          : <div>
+          : <div className="landing-page">
             <Particles className='particles'
               params={particlesOptions}
             />

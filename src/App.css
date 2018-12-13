@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+.home-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.chartContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-page{
+  margin-top: 100px;
+  /* width: 100%;
+  height: 100%; */
+  /* background: linear-gradient(89deg, #6D7993 0%, #343434 100%); w3c */
+}
+
 /* .center {
   display: flex;
   justify-content: center;
