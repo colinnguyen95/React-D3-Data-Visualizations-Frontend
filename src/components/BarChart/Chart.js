@@ -24,10 +24,10 @@ class Chart extends Component {
     const yValue = d => d["Product Name"]
 
     const { data } = this.state;
-    const margins = { top: 50, right: 50, bottom: 50, left: 50 }
+    const margins = { top: 20, right: 50, bottom: 50, left: 50 }
     const svgDimensions = {
-        width: Math.max(this.props.parentWidth, 600),
-        height: 400
+        width: Math.max(this.props.parentWidth, 500),
+        height: 350
     }
 
     const innerWidth = svgDimensions.width - margins.left - margins.right

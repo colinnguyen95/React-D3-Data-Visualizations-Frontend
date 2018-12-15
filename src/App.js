@@ -80,14 +80,14 @@ class App extends Component {
                 <MainContainer />
                 <SubContainer />
               </div>
-              <div className="compContainer">
+              {/* <div className="compContainer">
                 <Chart />
                 
-              </div>
-              <div className="compContainer">
+              </div> */}
+              {/* <div className="compContainer">
                 <PieChartX />
                 <LineChart />
-              </div>
+              </div> */}
             </div>
           : <div className="landing-page">
             <Particles className='particles'

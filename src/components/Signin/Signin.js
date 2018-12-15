@@ -5,9 +5,14 @@ class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      signInEmployeeID: '',
       signInEmail: '',
       signInPassword: ''
     }
+  }
+
+  onEmployeeIDChange = (event) => {
+    this.setState({signInEmployeeID: event.target.value})
   }
 
   onEmailChange = (event) => {
@@ -23,6 +28,7 @@ class Signin extends React.Component {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
+        employeeID: this.state.signInEmployeeID,
         email: this.state.signInEmail,
         password: this.state.signInPassword
       })
@@ -47,6 +53,16 @@ class Signin extends React.Component {
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
               <legend className="f1 fw6 ph0 mh0">Sign In</legend>
+              <div className="mt3">
+                <label className="db fw6 lh-copy f6" htmlFor="email-address">Employee ID</label>
+                <input
+                  className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  type="email"
+                  name="email-address"
+                  id="email-address"
+                  onChange={this.onEmployeeIDChange}
+                />
+              </div>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                 <input

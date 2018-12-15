@@ -43,8 +43,8 @@ class LineChart extends React.Component {
       render() {
         let { data } = this.state;
     
-        const height = 400;
-        const width = 500;
+        const height = 300;
+        const width = 450;
     
         const boxStyles = {
           //background: 'pink',
@@ -91,7 +91,7 @@ class LineChart extends React.Component {
           });
     
         return (
-          <div style={boxStyles}>
+          <div style={boxStyles} style={{margin: 0}}>
             <svg height={height} width={width}>
               <defs>
                 <linearGradient id="MyGradient">

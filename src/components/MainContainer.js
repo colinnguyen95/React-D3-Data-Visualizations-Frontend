@@ -10,7 +10,7 @@ class MainContainer extends Component {
     return (
         <div style={{display: 'flex'}}>
             <div className="custom_padding" >
-                <Panel>
+                <Panel style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                     <PanelHeader title="Top 10 Products">
                         <Range/>
                     </PanelHeader>
