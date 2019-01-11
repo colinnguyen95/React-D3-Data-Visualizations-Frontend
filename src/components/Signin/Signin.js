@@ -33,17 +33,26 @@ class Signin extends React.Component {
         password: this.state.signInPassword
       })
     })
-      .then(response => response.json())
-      .then(data => {
-        // if (user.id) {
-        //   this.props.loadUser(user)
-        //   this.props.onRouteChange('home');
-        // }
-        if (data === 'success') {
-          this.props.onRouteChange('home');
-        }
-      })
+      .then(this.props.onRouteChange('home'))
+      //*MAKE SURE TO DELETE TOP LINE AND UNCOMMENT CHUNK UNDER*
+      // .then(response => response.json())
+      // .then(user => {
+      //   if (user.name) {
+      //     this.props.loadUser(user)
+      //     this.props.onRouteChange('home');
+      //   }
+      // })
   }
+      // .then(data => {
+      //   // if (user.id) {
+      //   //   this.props.loadUser(user)
+      //   //   this.props.onRouteChange('home');
+      //   // }
+      //   if (data === 'success') {
+      //     this.props.onRouteChange('home');
+      //   }
+      // })
+  // }
 
   render() {
     const { onRouteChange } = this.props;

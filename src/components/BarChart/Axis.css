@@ -1,6 +1,8 @@
 .Axis path,
 .Axis line {
-  stroke: #E0E0E0;
+  /* stroke: #E0E0E0; */
+  /* stroke: #ececed; */
+  stroke:black;
 }
 
 .Axis text {
@@ -10,13 +12,13 @@
 
 .Axis-Right text {
   z-index: 99 !important;
-  fill: white;
+  /* fill: white; */
   font-size: 1.4em;
 }
 
 .Axis-Bottom text {
   transform: rotate(-45deg);
   text-anchor: end;
-  fill: white;
+  /* fill: white; */
   font-size: 1.4em;
 }

@@ -2,7 +2,10 @@ body {
   margin: 0;
   padding: 0;
   /* font-family: "Courier New", Courier, monospace; */
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  background-color: #e8e8e9;
+
+  font-family: 'Roboto', sans-serif !important;
   background: linear-gradient(89deg, #565656 0%, #343434 100%); /* w3c */
 }
 
@@ -13,6 +16,7 @@ button {
 .custom_padding{
   padding-left: 5px !important;
   padding-right: 5px !important;
+
 }
 
 .card{
@@ -23,12 +27,12 @@ button {
 
 .bg{
   margin-bottom: 10px;
-  background-color: #9099a2;
+  background-color: #ffffff;
   border-radius:4px;
   height: 400px;
-  width: 650px;
   box-shadow: 1px 1px 1px -1px rgba(100,100,100,.5);
 }
+
 
 .shadow {
   -webkit-filter: drop-shadow( 0px 2px 2px rgba(0,0,0,.3) );
@@ -50,6 +54,7 @@ button {
   border-radius: 2px 2px 0 0;
   border-bottom: 1px solid #dbdbdb;
   padding:10px 20px 10px 20px;
+  margin-bottom: 20px;
 }
 
 .range-custom{
@@ -94,6 +99,108 @@ button {
 
 .margin-below-20{
   margin-bottom: 20px;
+}
+
+
+
+.line {
+  fill: none;
+  stroke: #53c79f;
+  stroke-width: 3px;
+
+
+}
+
+.axis {
+  fill: #a3a3a7;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #ececed;
+  shape-rendering: crispEdges;
+
+}
+
+.axis text {
+  font-size: 12px;
+}
+
+.y-grid .tick{
+  stroke: #ececed;
+  opacity: 1;
+}
+
+.y-grid path,
+.y-grid line {
+  fill: none;
+  stroke: #ececed;
+  shape-rendering: crispEdges;
+  opacity: 1;
+
+}
+
+.dot{
+  fill:#FFFFFF;
+  stroke:#53c79f;
+  stroke-width:2px;
+
+}
+
+.area{
+  opacity: .8    ;
+  stroke: #fff;
+  stroke-width:2px;
+}
+
+.tooltip-bg{
+  fill:#000;
+  opacity:0.7;
+}
+
+.tooltip-text1{
+  font-size:15px;
+  fill:#ffffff;
+}
+
+.tooltip-text2{
+  font-size:20px;
+  fill:#a9f3ff;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .card_header{
+      font-size: .8em;
+  }
+
+  .card_body{
+      padding-top:5px;
+      font-size: 2.5em;
+  }
+
+
+}
+
+@media screen and (max-width: 750px) {
+  .header_text{
+      -display: none;
+  }
+}
+
+
+.filter-selection{
+  cursor: pointer;
 }
 
 

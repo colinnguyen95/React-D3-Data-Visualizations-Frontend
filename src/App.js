@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
-import Chart from './components/BarChart/Chart';
+//import Chart from './components/BarChart/Chart';
 //import PieChart from './components/PieChart'
-import PieChartX from './components/PieChart/PieChartX'
-import LineChart from './components/LineChart'
+//import PieChartX from './components/PieChart/PieChartX'
+//import LineChart from './components/LineChart'
 import MainRangeSelection from './components/MainRangeSelection'
 import SubContainer from './components/SubContainer'
 import Cards from './components/Cards'
+import Tables from './components/Tables'
 import MainContainer from './components/MainContainer'
 import Register from './components/Register/Register';
 import './App.css';
@@ -30,28 +31,27 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imageUrl: '',
-      box: {},
+      // imageUrl: '',
+      // box: {},
       route: 'signin',
       //route: 'signin',
       isSignedIn: false,
       user: {
-        id: '',
+        //id: '',
         name: '',
-        email: '',
-        entries: 0,
-        joined: ''
+        //email: '',
+        //joined: ''
       }
     }
   }
 
-  loadUser = (data) => {
+  loadUser = (user) => {
     this.setState({user: {
-      id: data.id,
-      name: data.name,
-      email: data.email,
-      entries: data.entries,
-      joined: data.joined
+      //id: data.id,
+      name: user.name,
+      //email: data.email,
+      //entries: data.entries,
+      //joined: data.joined
     }})
   }
 
@@ -71,12 +71,12 @@ class App extends Component {
          {/* <Particles className='particles'
           params={particlesOptions}
         /> */}
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} name={this.state.user.name}/>
         { route === 'home'
           ? <div className="home-page" style={{background: '#343434'}}>
-              <div className="chartContainer">
+              <div className="container">
                 <MainRangeSelection />
-                
+                <Cards />
                 <MainContainer />
                 <SubContainer />
               </div>
@@ -100,6 +100,7 @@ class App extends Component {
             }
             </div>
         }
+        <Tables />
       </div>
     );
   }

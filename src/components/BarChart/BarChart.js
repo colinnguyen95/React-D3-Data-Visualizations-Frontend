@@ -4,7 +4,7 @@ import Axes from './Axes'
 import Bars from './Bars'
 import ResponsiveWrapper from '../ResponsiveWrapper/ResponsiveWrapper'
 
-class Chart extends Component {
+class BarChart extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -13,7 +13,7 @@ class Chart extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:5000/top10')
+    fetch('http://localhost:5000/top5')
       .then(response => response.json())
       .then(data => this.setState({ data: data }))
       .catch(error => console.log('parsing failed', error));
@@ -27,7 +27,7 @@ class Chart extends Component {
     const margins = { top: 20, right: 50, bottom: 50, left: 50 }
     const svgDimensions = {
         width: Math.max(this.props.parentWidth, 500),
-        height: 350
+        height: 320
     }
 
     const innerWidth = svgDimensions.width - margins.left - margins.right
@@ -75,4 +75,4 @@ class Chart extends Component {
   }
 }
 
-export default ResponsiveWrapper(Chart);
+export default ResponsiveWrapper(BarChart);

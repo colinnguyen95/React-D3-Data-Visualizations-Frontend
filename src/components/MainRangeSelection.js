@@ -7,7 +7,7 @@ class MainRangeSelection extends Component {
     return (
         <div className="row range-custom">
             <div className="range-custom-child">
-                <Range />
+                <Range master={true}/>
             </div>
         </div>
     )

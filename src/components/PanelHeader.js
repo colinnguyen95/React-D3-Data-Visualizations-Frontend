@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 class PanelHeader extends Component {
   render() {
     return (
-        <div className="panel-header" style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div className="panel-header">
             <div className="pull-left panel-title">{this.props.title}</div>
             <div className="pull-right line-height-30">
                 {this.props.children}
