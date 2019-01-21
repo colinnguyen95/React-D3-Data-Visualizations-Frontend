@@ -2,7 +2,7 @@ import React from 'react';
 
 const Tables = () => {
     return (
-    <div className="mv4 w-100 w-50-m w-25-l mw6 center">
+    <div className="mv4 w-100 w-50-m w-25-l mw6 center" style={{background: 'white'}}>
         <table class="table">
             <thead class="thead-dark">
             <tr>
