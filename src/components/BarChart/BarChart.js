@@ -5,25 +5,25 @@ import Bars from './Bars'
 import ResponsiveWrapper from '../ResponsiveWrapper/ResponsiveWrapper'
 
 class BarChart extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-        data: [],
-    }; 
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //       data: [],
+  //   }; 
+  // }
 
-  componentDidMount(){
-    fetch('http://localhost:5000/top5')
-      .then(response => response.json())
-      .then(data => this.setState({ data: data }))
-      .catch(error => console.log('parsing failed', error));
-  }
+  // componentDidMount(){
+  //   fetch('http://localhost:5000/top5')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({ data: data }))
+  //     .catch(error => console.log('parsing failed', error));
+  // }
 
   render() {
     const xValue = d => d.Profit
     const yValue = d => d["Product Name"]
 
-    const { data } = this.state;
+    const { data } = this.props;
     const margins = { top: 20, right: 50, bottom: 50, left: 50 }
     const svgDimensions = {
         width: Math.max(this.props.parentWidth, 500),

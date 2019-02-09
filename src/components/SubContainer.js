@@ -34,28 +34,37 @@ class SubContainer extends Component {
         this.reloadPieData(defaultValue);
     }
 
-    reloadBarData = (defaultValue) => {
-        var dataBar=[
-            { month:'Jan', new:20, old:30 },
-            { month:'Feb', new:29, old:83 },
-            { month:'Mar', new:86, old:75 },
-            { month:'Apr', new:13, old:57 },
-            { month:'May', new:30, old:23 },
-            { month:'Jun', new:50, old:27 }
+    // reloadBarData = (defaultValue) => {
+    //     var dataBar=[
+    //         { month:'Jan', new:20, old:30 },
+    //         { month:'Feb', new:29, old:83 },
+    //         { month:'Mar', new:86, old:75 },
+    //         { month:'Apr', new:13, old:57 },
+    //         { month:'May', new:30, old:23 },
+    //         { month:'Jun', new:50, old:27 }
 
-        ];
+    //     ];
 
-        for(var i=0,j=5;i<6;++i,--j){
+    //     for(var i=0,j=5;i<6;++i,--j){
 
-            var d=dataBar[i];
-            d.new=Math.floor((Math.random() * 200) + 5);
-            d.old=Math.floor((Math.random() * 200) + 5);
+    //         var d=dataBar[i];
+    //         d.new=Math.floor((Math.random() * 200) + 5);
+    //         d.old=Math.floor((Math.random() * 200) + 5);
 
 
-            dataBar[i]=d;
-        }
+    //         dataBar[i]=d;
+    //     }
 
-        this.setState({dataBar:dataBar,defaultBar:defaultValue});
+    //     this.setState({dataBar:dataBar,defaultBar:defaultValue});
+    // }
+
+    reloadBarData = () => {
+        fetch('http://localhost:5000/top5')
+        .then(response => response.json())
+        .then(data => this.setState({ dataBar: data }))
+        .catch(error => console.log('parsing failed', error));
+
+        // this.setState({dataBar:dataBar,defaultBar:defaultValue});
     }
 
     reloadPieData = () => {
@@ -111,9 +120,12 @@ class SubContainer extends Component {
             <div className="col-md-6 custom_padding" >
                 <Panel>
                     <PanelHeader title="Top 5 Products">
-                        <Range/>
+                        <Range loadData={this.state.dataBar} defaultSelection={this.state.defaultBar}/>
                     </PanelHeader>
-                    <BarChart />
+                    <div className="text-center padding-top-10">
+                        <BarChart data={this.state.dataBar}/>
+                    </div>
+                    
                 </Panel>
             </div>
         </div>
